@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    image: ecommercy:1.0.0
+    container_name: app
+    volumes:
+      - ./:/usr/local/app
+    ports:
+      - 3000:3000
+    command: >
+      sh -c "
+        yarn --ignore-engines
+        yarn start
+      "
